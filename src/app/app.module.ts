@@ -6,22 +6,23 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { StarComponent } from './star/star.component';
-import { NavbarComponent } from './nav-bar/nav-bar.component';
+import { StarComponent } from './courses/shared/component/star/star.component';
+import { NavbarComponent } from './courses/core/component/nav-bar/nav-bar.component';
 import { Error404Component } from './error-404/error-404.component';
 import { CourseModule } from './courses/course.module';
+import { CoreModule } from './courses/core/component/nav-bar/core.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     Error404Component,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     CourseModule,
+    CoreModule,
     RouterModule.forRoot([
       {
         path: '' , redirectTo: 'courses', pathMatch: 'full'
